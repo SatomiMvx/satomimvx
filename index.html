@@ -3,95 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Interface</title>
+    <title>Login Landing Page</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
             font-family: Arial, sans-serif;
+        }
+        #video-background {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .content {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            margin: 0;
+            color: white;
+            text-align: center;
         }
-
-        #logo {
-            margin-bottom: 20px;
+        .content h1 {
+            font-size: 3rem;
         }
-
-        #requestField {
-            margin-bottom: 20px;
+        .content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
-
-        #requestField input {
-            width: 300px;
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .login-container input {
+            width: 100%;
             padding: 10px;
-            font-size: 16px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
         }
-
-        #chat {
-            width: 300px;
-            height: 200px;
-            border: 1px solid #000;
-            margin-bottom: 20px;
-            overflow-y: scroll;
+        .login-container button {
+            width: 100%;
             padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.2rem;
         }
-
-        #fileTransfer {
-            margin-bottom: 20px;
-        }
-
-        #fileTransfer input {
-            padding: 10px;
-        }
-
-        #sendBtn {
-            padding: 10px 20px;
+        .login-container button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div id="logo">
-        <!-- Add your logo here -->
-        <h2>Your Logo Here</h2>
-    </div>
+    <!-- Video background -->
+    <video autoplay muted loop id="video-background">
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <div id="requestField">
-        <input type="text" id="requestInput" placeholder="Enter your request here">
+    <!-- Content over video -->
+    <div class="content">
+        <h1>Welcome to Our Site</h1>
+        <p>Please log in to access the full features</p>
+        
+        <div class="login-container">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="loginBtn">Login</button>
+        </div>
     </div>
-
-    <div id="chat">
-        <!-- Private chat messages will appear here -->
-    </div>
-
-    <div id="fileTransfer">
-        <input type="file" id="fileInput">
-    </div>
-
-    <button id="sendBtn">Send</button>
 
     <script>
-        document.getElementById('sendBtn').addEventListener('click', function() {
-            let request = document.getElementById('requestInput').value;
-            let file = document.getElementById('fileInput').files[0];
+        // Handle login button click
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
 
-            // Add request to chat area (for demonstration purposes)
-            let chat = document.getElementById('chat');
-            let requestText = document.createElement('p');
-            requestText.textContent = "Request: " + request;
-            chat.appendChild(requestText);
-
-            // Handle file (e.g., show filename in chat)
-            if (file) {
-                let fileText = document.createElement('p');
-                fileText.textContent = "File: " + file.name;
-                chat.appendChild(fileText);
+            // Simple login validation (dummy)
+            if (username === "user" && password === "password") {
+                window.location.href = "interface.html"; // Redirect to main interface page
+            } else {
+                alert("Invalid credentials!");
             }
-
-            // Clear inputs after sending
-            document.getElementById('requestInput').value = '';
-            document.getElementById('fileInput').value = '';
         });
     </script>
 </body>
