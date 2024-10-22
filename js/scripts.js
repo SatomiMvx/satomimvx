@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             password: password
         };
         localStorage.setItem('user', JSON.stringify(user));
+        console.log('User registered:', user); // Debugging log
         alert('Registration successful!');
         registerForm.style.display = 'none';
         loginForm.style.display = 'block'; // Go back to login form after successful registration
@@ -60,9 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Check if the entered credentials match the stored credentials
+        // Fetch the stored user data from localStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
-        
+        console.log('Stored user:', storedUser); // Debugging log
+        console.log('Entered username:', username); // Debugging log
+        console.log('Entered password:', password); // Debugging log
+
         if (storedUser && storedUser.username === username && storedUser.password === password) {
             alert('Login successful!');
         } else {
