@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Site</title>
-    <!-- Link to External CSS -->
+    <title>Login or Register</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,18 +12,31 @@
         <source src="videos/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    
 
     <!-- Content Overlay -->
     <div class="content">
         <img src="assets/logo.png" alt="Logo" id="logo">
         <h1>Welcome to Our Site</h1>
-        <p>Please log in to access the full features</p>
-        
-        <div class="login-container">
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
+        <p>Please log in or register to access the full features</p>
+
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
             <button id="loginBtn">Login</button>
+            <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-container" id="registerForm" style="display: none;">
+            <h2>Register</h2>
+            <input type="text" id="registerUsername" placeholder="Username">
+            <input type="email" id="registerEmail" placeholder="Email">
+            <input type="password" id="registerPassword" placeholder="Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <button id="registerBtn">Register</button>
+            <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
         </div>
     </div>
 
