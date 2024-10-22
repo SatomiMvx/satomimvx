@@ -3,77 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Landing Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
-        #video-background {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-            text-align: center;
-        }
-        .content h1 {
-            font-size: 3rem;
-        }
-        .content p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-        .login-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 10px;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1.2rem;
-        }
-        .login-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Welcome to Our Site</title>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Video background -->
+    <!-- Video Background -->
     <video autoplay muted loop id="video-background">
-        <source src="your-video.mp4" type="video/mp4">
+        <source src="videos/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Content over video -->
+    <!-- Content Overlay -->
     <div class="content">
+        <img src="assets/logo.png" alt="Logo" id="logo">
         <h1>Welcome to Our Site</h1>
         <p>Please log in to access the full features</p>
         
@@ -84,19 +27,7 @@
         </div>
     </div>
 
-    <script>
-        // Handle login button click
-        document.getElementById('loginBtn').addEventListener('click', function() {
-            let username = document.getElementById('username').value;
-            let password = document.getElementById('password').value;
-
-            // Simple login validation (dummy)
-            if (username === "user" && password === "password") {
-                window.location.href = "interface.html"; // Redirect to main interface page
-            } else {
-                alert("Invalid credentials!");
-            }
-        });
-    </script>
+    <!-- Link to External JS -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
