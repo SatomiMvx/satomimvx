@@ -8,36 +8,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle between login and register forms
     showRegisterLink.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default link behavior
+        e.preventDefault();
         loginForm.style.display = 'none';
-        registerForm.style.display = 'block'; // Show register form
+        registerForm.style.display = 'block';
     });
 
     showLoginLink.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default link behavior
+        e.preventDefault();
         registerForm.style.display = 'none';
-        loginForm.style.display = 'block'; // Show login form
-    });
-
-    // Login button functionality
-    loginBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent form from submitting
-        const username = document.getElementById('loginUsername').value;
-        const password = document.getElementById('loginPassword').value;
-
-        if (username === '' || password === '') {
-            alert('Please fill in both fields');
-            return;
-        }
-
-        // Add your logic for login here (e.g., API call)
-        console.log('Logging in with', username, password);
-        alert('Login successful!');
+        loginForm.style.display = 'block';
     });
 
     // Register button functionality
     registerBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent form from submitting
+        e.preventDefault();
         const username = document.getElementById('registerUsername').value;
         const email = document.getElementById('registerEmail').value;
         const password = document.getElementById('registerPassword').value;
@@ -53,8 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Add your logic for registering here (e.g., API call)
-        console.log('Registering with', username, email, password);
+        // Save registered user data to localStorage (for simulation purposes)
+        const user = {
+            username: username,
+            email: email,
+            password: password
+        };
+        localStorage.setItem('user', JSON.stringify(user));
         alert('Registration successful!');
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'block'; // Go back to login form after successful registration
+    });
+
+    // Login button functionality
+    loginBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        if (username === '' || password === '') {
+            alert('Please fill in both fields');
+            return;
+        }
+
+        // Check if the entered credentials match the stored credentials
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        
+        if (storedUser && storedUser.username === username && storedUser.password === password) {
+            alert('Login successful!');
+        } else {
+            alert('Invalid login credentials!');
+        }
     });
 });
