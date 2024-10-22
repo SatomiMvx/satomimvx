@@ -1,1 +1,114 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Video Background Styling */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* Content Overlay */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+}
+
+#logo {
+    margin-bottom: 20px;
+}
+
+#logo img {
+    width: 150px; /* Adjust size as needed */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Interface Styling */
+#requestField, #fileTransfer {
+    margin-bottom: 20px;
+}
+
+#requestField input, #fileTransfer input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#chat {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#sendBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    background-color: #007bff;
+    color: white;
+}
 
