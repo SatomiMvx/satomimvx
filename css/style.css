@@ -1,47 +1,103 @@
-/* Add basic styles for both forms */
+/* Basic styling for the form container */
 .form-container {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 30px; /* Padding around the form */
+    border-radius: 10px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    text-align: center; /* Center the text */
+    margin: 0 auto 20px; /* Center the form horizontally with margin at the bottom */
 }
 
+/* Styling for input fields in the form */
 .form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside input fields */
+    margin-bottom: 15px; /* Spacing between inputs */
+    border: none; /* Remove default borders */
+    border-radius: 5px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Ensure padding doesn't increase the width */
 }
 
+/* Styling for the form buttons */
 .form-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Primary blue background */
+    color: white; /* White text color */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 1.2rem; /* Slightly larger font */
 }
 
+/* Button hover effect */
 .form-container button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Styling for the paragraph below the form */
 .form-container p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #ccc;
+    margin-top: 10px; /* Spacing above the paragraph */
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #ccc; /* Light grey text color */
 }
 
+/* Styling for links within the form */
 .form-container a {
-    color: #007bff;
-    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove underline by default */
 }
 
+/* Hover effect for links */
 .form-container a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Styling for the background video */
+#video-background {
+    position: fixed; /* Fixed background video */
+    top: 0;
+    left: 0;
+    min-width: 100%; /* Cover the entire viewport width */
+    min-height: 100%; /* Cover the entire viewport height */
+    z-index: -1; /* Ensure the video is behind all content */
+}
+
+/* Center the logo and text */
+#logo {
+    width: 150px; /* Size of the logo */
+    display: block;
+    margin: 0 auto 20px; /* Center the logo with margin below it */
+}
+
+h1 {
+    color: white; /* White heading text */
+    font-size: 2rem; /* Heading size */
+    margin-bottom: 20px; /* Spacing below heading */
+}
+
+p {
+    color: white; /* White paragraph text */
+    font-size: 1.1rem; /* Slightly larger paragraph text */
+}
+
+/* Overall body styling */
+body {
+    font-family: Arial, sans-serif; /* Simple, sans-serif font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-color: black; /* Fallback background color */
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/* Content container to center everything */
+.content {
+    position: relative; /* Allow proper positioning */
+    z-index: 1; /* Ensure content is above the video */
+    text-align: center; /* Center the content */
+    color: white; /* White text */
 }
