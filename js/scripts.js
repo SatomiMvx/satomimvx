@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Login successful!');
             
             // Redirect to the next page (e.g., dashboard.html)
-            window.location.href = 'dashboard.html';
+            window.location.href = 'interface.html';
         } else {
             alert('Invalid login credentials!');
         }
