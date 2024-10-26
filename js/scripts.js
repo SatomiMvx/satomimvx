@@ -55,22 +55,22 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const username = document.getElementById('loginUsername').value;
         const password = document.getElementById('loginPassword').value;
-
+    
         if (username === '' || password === '') {
             alert('Please fill in both fields');
             return;
         }
-
+    
         // Fetch the stored user data from localStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
-        console.log('Stored user:', storedUser); // Debugging log
-        console.log('Entered username:', username); // Debugging log
-        console.log('Entered password:', password); // Debugging log
-
+    
         if (storedUser && storedUser.username === username && storedUser.password === password) {
             alert('Login successful!');
+            
+            // Redirect to the next page (e.g., dashboard.html)
+            window.location.href = 'dashboard.html';
         } else {
             alert('Invalid login credentials!');
         }
     });
-});
+    
