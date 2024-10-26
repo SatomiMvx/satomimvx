@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (storedUser && storedUser.username === username && storedUser.password === password) {
             alert('Login successful!');
             
-            // Redirect to the next page (e.g., dashboard.html)
+            // Redirect to 'interface.html' after successful login
             window.location.href = 'interface.html';
         } else {
             alert('Invalid login credentials!');
